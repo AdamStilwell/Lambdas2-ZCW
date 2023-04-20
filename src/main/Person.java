@@ -1,8 +1,19 @@
+import java.time.LocalDate;
+
 public class Person {
     String name;
+    LocalDate birthday;
     int age;
     Sex gender;
     String emailAddress;
+
+    public Person(String name, LocalDate birthday, int age, Sex gender, String emailAddress) {
+        this.name = name;
+        this.birthday = birthday;
+        this.age = age;
+        this.gender = gender;
+        this.emailAddress = emailAddress;
+    }
 
     public String getName() {
         return name;
@@ -10,6 +21,14 @@ public class Person {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public LocalDate getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(LocalDate birthday) {
+        this.birthday = birthday;
     }
 
     public int getAge() {
@@ -34,5 +53,23 @@ public class Person {
 
     public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
+    }
+
+
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", birthday=" + birthday +
+                ", age=" + age +
+                ", gender=" + gender +
+                ", emailAddress='" + emailAddress + '\'' +
+                '}';
+    }
+
+    public String printPerson() {
+        System.out.println(this);
+        return toString();
     }
 }
