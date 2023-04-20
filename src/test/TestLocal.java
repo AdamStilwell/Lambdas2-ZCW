@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public class TestLocal {
     @Test
     public void personCheckerTest(){
+        //given
         ArrayList<Person> people = new ArrayList<>();
         StringBuilder sb = new StringBuilder();
         Person p = new Person("Henry", null, 90, Sex.MALE, "madeInHell8@gmail.com");
@@ -15,14 +16,15 @@ public class TestLocal {
         people.add(p2);
         people.add(p3);
 
+        //when
         String expected = sb.append(p)
                 .append("\n")
                 .append(p2)
                 .append("\n")
                 .toString();
 
+        //then
         String actual = PersonService.printPersons(people, new PersonChecker());
-
         Assert.assertEquals(expected, actual);
 
     }
